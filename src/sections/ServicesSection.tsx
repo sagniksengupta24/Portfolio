@@ -3,28 +3,43 @@ import { FadeIn } from '../components/FadeIn';
 const services = [
   {
     num: '01',
-    name: '3D Modeling',
-    desc: 'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.'
+    name: 'Cloud & Backend Engineering',
+    desc: 'Designing and managing scalable server architectures, robust databases, and cloud infrastructure to ensure high availability and optimal performance.'
   },
   {
     num: '02',
-    name: 'Rendering',
-    desc: 'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.'
+    name: 'API Development & Integration',
+    desc: 'Building secure, RESTful, and GraphQL APIs to seamlessly connect diverse systems, microservices, and third-party platforms.'
   },
   {
     num: '03',
-    name: 'Motion Design',
-    desc: 'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.'
+    name: 'DevOps & Deployment',
+    desc: 'Streamlining development lifecycles with continuous integration and deployment (CI/CD) pipelines, automated testing, and containerization.'
   },
   {
     num: '04',
-    name: 'Branding',
-    desc: 'Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence.'
+    name: 'Web Development',
+    desc: 'Creating dynamic, responsive, and accessible user interfaces utilizing modern frontend frameworks and best-in-class web standards.'
   },
   {
     num: '05',
-    name: 'Web Design',
-    desc: 'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.'
+    name: 'Full Stack Development',
+    desc: 'Architecting end-to-end solutions that bridge intuitive client-side experiences with powerful, scalable server-side technologies.'
+  },
+  {
+    num: '06',
+    name: 'Artificial Intelligence & Machine Learning',
+    desc: 'Developing intelligent algorithms and predictive models to automate workflows, personalize experiences, and solve complex problems.'
+  },
+  {
+    num: '07',
+    name: 'Data Science & Analytics',
+    desc: 'Transforming raw data into actionable insights through advanced statistical analysis, visualization, and strategic data mining.'
+  },
+  {
+    num: '08',
+    name: 'Cross-Platform App Development',
+    desc: 'Crafting versatile mobile applications for iOS and Android using unified codebases to deliver native-like performance and user experiences.'
   }
 ];
 

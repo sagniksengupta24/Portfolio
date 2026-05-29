@@ -25,13 +25,13 @@ function App() {
 
   return (
     <ReactLenis root options={{ lerp: 0.05, smoothWheel: true }}>
-      <div className="app-wrapper" ref={appRef} style={{ opacity: 0 }}>
+      <main className="app-wrapper" ref={appRef} style={{ opacity: 0 }}>
         <HeroSection />
         <MarqueeSection />
         <AboutSection />
         <ServicesSection />
         <ProjectsSection />
-      </div>
+      </main>
     </ReactLenis>
   );
 }

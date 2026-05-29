@@ -21,7 +21,7 @@ export const AnimatedText = ({
   let charIndex = 0;
 
   return (
-    <p ref={containerRef} className={className}>
+    <p ref={containerRef} className={className} style={{ contentVisibility: 'auto' }}>
       {words.map((word, wordIdx) => (
         <span key={wordIdx} className="animated-word">
           {word.split('').map((char, charIdx) => {
