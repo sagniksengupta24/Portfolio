@@ -1,0 +1,57 @@
+.loading-screen {
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(157, 232, 215, 0.1), transparent 28rem),
+    linear-gradient(180deg, #090f10 0%, #050607 100%);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 1;
+  overflow: hidden;
+  position: fixed;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+  visibility: visible;
+  z-index: 5000;
+}
+
+.loading-screen.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-screen__grid,
+.loading-screen__veil {
+  inset: 0;
+  position: absolute;
+}
+
+.loading-screen__veil {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(5, 6, 7, 0.28) 48%, rgba(5, 6, 7, 0.8) 100%),
+    linear-gradient(90deg, rgba(5, 6, 7, 0.54), transparent 48%, rgba(5, 6, 7, 0.54));
+  pointer-events: none;
+}
+
+.loading-screen__content {
+  color: var(--color-primary-text);
+  display: grid;
+  gap: 0.6rem;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.loading-screen__kicker {
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.loading-screen__title {
+  font-size: clamp(1.35rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 26px rgba(157, 232, 215, 0.18);
+}

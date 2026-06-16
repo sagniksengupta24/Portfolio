@@ -1,9 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --font-sans: 'Kanit', sans-serif;
-  --color-dark-bg: #0C0C0C;
-  --color-primary-text: #D7E2EA;
+  --font-sans: 'Manrope', sans-serif;
+  --color-dark-bg: #050607;
+  --color-panel: rgba(16, 20, 23, 0.74);
+  --color-panel-strong: rgba(223, 235, 242, 0.12);
+  --color-primary-text: #F3F8FB;
+  --color-muted-text: #98A5AD;
+  --color-accent: #9DE8D7;
+  --color-stroke: rgba(229, 244, 248, 0.18);
+  --shadow-glass: 0 34px 96px rgba(7, 14, 16, 0.46), inset 0 1px 0 rgba(255, 255, 255, 0.36), inset 0 -24px 46px rgba(5, 12, 14, 0.24);
+  --shadow-tactile: 22px 28px 70px rgba(7, 14, 16, 0.4), -12px -12px 34px rgba(255, 255, 255, 0.035), inset 1px 1px 0 rgba(255, 255, 255, 0.42), inset -16px -20px 42px rgba(5, 12, 14, 0.3);
+  --shadow-tactile-hover: 28px 36px 88px rgba(7, 14, 16, 0.44), 0 0 42px rgba(157, 232, 215, 0.08), inset 1px 1px 0 rgba(255, 255, 255, 0.5), inset -18px -24px 46px rgba(5, 12, 14, 0.34);
 }
 
 * {
@@ -23,8 +31,8 @@ body {
 }
 
 html, body, #root, .main-wrapper {
-  background: #0C0C0C;
-  font-family: 'Kanit', sans-serif;
+  background: var(--color-dark-bg);
+  font-family: var(--font-sans);
   width: 100%;
 }
 
@@ -35,11 +43,12 @@ img {
 }
 
 .hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #A9BAC5 54%, #5A666E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 18px 58px rgba(157, 232, 215, 0.08);
 }
 
 /* Global utility for consistent internal padding and alignment */

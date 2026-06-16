@@ -1,66 +1,48 @@
 import { FadeIn } from '../components/FadeIn';
+import { VariableHeading } from '../components/VariableHeading';
 
 const services = [
   {
     num: '01',
-    name: 'Cloud & Backend Engineering',
-    desc: 'Designing and managing scalable server architectures, robust databases, and cloud infrastructure to ensure high availability and optimal performance.'
+    name: 'AI Web Applications',
+    desc: 'Full-stack AI tools, LLM workflows, smart dashboards, and automation interfaces that feel polished from prompt to output.'
   },
   {
     num: '02',
-    name: 'API Development & Integration',
-    desc: 'Building secure, RESTful, and GraphQL APIs to seamlessly connect diverse systems, microservices, and third-party platforms.'
+    name: 'Full-Stack Development',
+    desc: 'React, Next.js, Node.js, APIs, authentication, databases, and deployment-ready systems built with product discipline.'
   },
   {
     num: '03',
-    name: 'DevOps & Deployment',
-    desc: 'Streamlining development lifecycles with continuous integration and deployment (CI/CD) pipelines, automated testing, and containerization.'
+    name: 'Data & ML Systems',
+    desc: 'Data analysis, ML models, prediction workflows, dashboards, and intelligent decision systems for real-world use cases.'
   },
   {
     num: '04',
-    name: 'Web Development',
-    desc: 'Creating dynamic, responsive, and accessible user interfaces utilizing modern frontend frameworks and best-in-class web standards.'
-  },
-  {
-    num: '05',
-    name: 'Full Stack Development',
-    desc: 'Architecting end-to-end solutions that bridge intuitive client-side experiences with powerful, scalable server-side technologies.'
-  },
-  {
-    num: '06',
-    name: 'Artificial Intelligence & Machine Learning',
-    desc: 'Developing intelligent algorithms and predictive models to automate workflows, personalize experiences, and solve complex problems.'
-  },
-  {
-    num: '07',
-    name: 'Data Science & Analytics',
-    desc: 'Transforming raw data into actionable insights through advanced statistical analysis, visualization, and strategic data mining.'
-  },
-  {
-    num: '08',
-    name: 'Cross-Platform App Development',
-    desc: 'Crafting versatile mobile applications for iOS and Android using unified codebases to deliver native-like performance and user experiences.'
+    name: 'Creative Web Interfaces',
+    desc: 'Animated landing pages, scroll experiences, premium UI systems, and conversion-focused websites with cinematic restraint.'
   }
 ];
 
 export const ServicesSection = () => {
   return (
-    <section className="bg-white services-section z-10 relative">
-      <h2 className="text-dark font-black uppercase text-center services-heading leading-none">
-        Services
+    <section id="services" className="services-section z-10 relative">
+      <span className="section-kicker services-kicker">Capabilities</span>
+      <h2 className="hero-heading font-black uppercase text-center services-heading leading-none">
+        <VariableHeading label="Services" />
       </h2>
       
-      <div className="flex flex-col services-list">
+      <div className="services-list">
         {services.map((service, i) => (
-          <FadeIn key={service.num} delay={i * 0.1} y={30} className="service-item items-start">
-            <span className="font-black service-num text-dark leading-none shrink-0">
+          <FadeIn key={service.num} delay={i * 0.1} y={30} className="service-item glass-tactile">
+            <span className="font-black service-num leading-none shrink-0">
               {service.num}
             </span>
             <div className="service-content">
-              <h3 className="font-medium uppercase text-dark service-title leading-none">
+              <h3 className="font-medium uppercase service-title leading-none">
                 {service.name}
               </h3>
-              <p className="font-light leading-relaxed service-desc text-dark">
+              <p className="font-light leading-relaxed service-desc">
                 {service.desc}
               </p>
             </div>

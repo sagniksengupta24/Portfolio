@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 interface FadeInProps {
@@ -8,7 +9,7 @@ interface FadeInProps {
   x?: number;
   y?: number;
   className?: string;
-  as?: any;
+  as?: 'div' | 'nav' | 'span' | 'section' | 'p' | 'h1' | 'h2' | 'h3';
 }
 
 export const FadeIn = ({
@@ -20,7 +21,7 @@ export const FadeIn = ({
   className = '',
   as = 'div'
 }: FadeInProps) => {
-  const Component = motion.create(as as any);
+  const Component = motion[as] as React.ElementType;
   return (
     <Component
       initial={{ opacity: 0, x, y }}

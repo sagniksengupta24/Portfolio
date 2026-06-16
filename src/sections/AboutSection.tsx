@@ -1,55 +1,55 @@
 import { FadeIn } from '../components/FadeIn';
-import { AnimatedText } from '../components/AnimatedText';
+import ScrollReveal from '../components/ScrollReveal';
 import { ContactButton } from '../components/ContactButton';
-import { Moon, Sparkles, Blocks, Users } from 'lucide-react';
+import { VariableHeading } from '../components/VariableHeading';
+import { BrainCircuit, Code2, DatabaseZap, Sparkles } from 'lucide-react';
+
+const strengths = [
+  { icon: BrainCircuit, title: 'AI/ML & LLMs', body: 'Machine learning, LLM workflows, reinforcement learning, and intelligent interfaces.' },
+  { icon: Code2, title: 'Full-Stack Web', body: 'React, Next.js, Node.js, APIs, authentication, and deployment-ready product systems.' },
+  { icon: DatabaseZap, title: 'Data Science', body: 'Data analysis, prediction workflows, dashboards, and decision-support tools.' },
+  { icon: Sparkles, title: 'Creative Interfaces', body: 'Cinematic motion, premium UI systems, and high-polish interactive experiences.' }
+];
 
 export const AboutSection = () => {
   return (
     <section id="about" className="bg-dark about-section relative overflow-hidden">
-      <FadeIn delay={0.2} y={30} className="absolute about-moon">
-        <Moon 
-          size={120} 
-          className="about-dec-img text-primary pointer-events-none opacity-20" 
-        />
-      </FadeIn>
-      <FadeIn delay={0.4} y={-30} className="absolute about-object">
-        <Sparkles 
-          size={80} 
-          className="about-dec-img-small text-primary pointer-events-none opacity-20" 
-        />
-      </FadeIn>
-      <FadeIn delay={0.3} x={-30} className="absolute about-lego">
-        <Blocks 
-          size={100} 
-          className="about-dec-img text-primary pointer-events-none opacity-20" 
-        />
-      </FadeIn>
-      <FadeIn delay={0.5} x={30} className="absolute about-group">
-        <Users 
-          size={140} 
-          className="w-full text-primary pointer-events-none opacity-20" 
-        />
-      </FadeIn>
+      <div className="about-glass-orbit" />
 
       <div className="about-inner">
         <div className="about-content z-10 relative">
+          <span className="section-kicker">Introduction</span>
           <h2 className="hero-heading font-black uppercase text-center about-heading leading-none">
-            About
+            <VariableHeading label="About" />
           </h2>
 
-          <div className="about-text-wrapper">
+          <div className="about-text-wrapper glass-tactile">
             <div className="about-text-paragraph">
-              <AnimatedText
-                text="I'm Sagnik, an IIT Madras student and multidisciplinary developer passionate 
-                about building immersive digital experiences through AI, machine learning, data science,
-                 and modern web technologies. With strong expertise in React, JavaScript, Node.js, and 
-                 full-stack development, i blend creativity with engineering to craft visually striking,
-                  intelligent, and high-performance products that feel both modern and meaningful."
-                className="about-animated-text"
-              />
+              <ScrollReveal
+                baseOpacity={0.12}
+                enableBlur
+                baseRotation={3}
+                blurStrength={6}
+                textClassName="about-animated-text"
+                wordAnimationEnd="center center"
+              >
+                I&apos;m Sagnik Sengupta, an IIT Madras BS Data Science student building at the intersection of AI, full-stack engineering, and creative web design. I work with React, Next.js, Node.js, machine learning, LLM workflows, and interactive UI systems to turn ideas into polished digital products.
+              </ScrollReveal>
+            </div>
+            <div className="strength-grid">
+              {strengths.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <FadeIn key={item.title} delay={index * 0.08} y={20} className="strength-card">
+                    <Icon size={22} />
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </FadeIn>
+                );
+              })}
             </div>
             <FadeIn delay={0.2} y={20}>
-              <ContactButton />
+              <ContactButton label="Start a Project" />
             </FadeIn>
           </div>
         </div>

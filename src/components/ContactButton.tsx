@@ -1,7 +1,17 @@
-export const ContactButton = () => {
+interface ContactButtonProps {
+  label?: string;
+  href?: string;
+  variant?: 'primary' | 'ghost';
+}
+
+export const ContactButton = ({
+  label = 'Contact Me',
+  href = '#contact',
+  variant = 'primary'
+}: ContactButtonProps) => {
   return (
-    <button className="btn-contact">
-      Contact Me
-    </button>
+    <a className={`btn-contact btn-contact-${variant}`} href={href}>
+      {label}
+    </a>
   );
 };

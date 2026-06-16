@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+.variable-proximity {
+  font-family: 'Roboto Flex', var(--font-sans);
+  line-height: inherit;
+}
+
+.variable-proximity-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.variable-proximity-letter,
+.variable-proximity-space {
+  display: inline-block;
+}
+
+.variable-proximity-display {
+  color: #f3f8fb;
+  filter: drop-shadow(0 18px 42px rgba(157, 232, 215, 0.08));
+  -webkit-text-fill-color: currentColor;
+}
+
+.variable-proximity-display .variable-proximity-letter {
+  background: linear-gradient(180deg, #ffffff 0%, #cdd9df 46%, #6f7c84 100%);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.variable-proximity-display .variable-proximity-space {
+  -webkit-text-fill-color: transparent;
+}
+
+.variable-heading-wrap {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

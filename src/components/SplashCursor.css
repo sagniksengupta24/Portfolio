@@ -1,0 +1,13 @@
+.splash-cursor {
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  position: fixed;
+  z-index: 4200;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .splash-cursor {
+    display: none;
+  }
+}

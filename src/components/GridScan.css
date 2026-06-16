@@ -1,0 +1,12 @@
+.gridscan {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.gridscan canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

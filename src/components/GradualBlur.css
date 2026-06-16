@@ -1,0 +1,40 @@
+.gradual-blur {
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.gradual-blur-inner {
+  height: 100%;
+  pointer-events: none;
+  position: relative;
+  width: 100%;
+}
+
+.gradual-blur-inner > div {
+  -webkit-backdrop-filter: inherit;
+  backdrop-filter: inherit;
+}
+
+.gradual-blur-page {
+  contain: layout paint;
+}
+
+.site-gradual-blur {
+  mix-blend-mode: normal;
+  transition: opacity 0.35s ease;
+}
+
+.site-gradual-blur-top {
+  background: linear-gradient(180deg, rgba(5, 6, 7, 0.24), transparent);
+}
+
+.site-gradual-blur-bottom {
+  background: linear-gradient(0deg, rgba(5, 6, 7, 0.24), transparent);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .gradual-blur-inner > div {
+    background: rgba(5, 6, 7, 0.28);
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,237 @@
+.magic-card-effect {
+  --magic-glow-color: 157, 232, 215;
+  --magic-glow-x: 50%;
+  --magic-glow-y: 50%;
+  --magic-glow-intensity: 0;
+  --magic-glow-radius: 220px;
+  isolation: isolate;
+  position: relative;
+}
+
+.magic-bento-card {
+  background:
+    radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 84% 12%, rgba(157, 232, 215, 0.105), transparent 32%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(10, 16, 18, 0.96) 38%, rgba(7, 11, 12, 0.98) 100%),
+    #070b0c !important;
+  border: 1px solid rgba(157, 232, 215, 0.2) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(28px) saturate(1.28);
+  -webkit-backdrop-filter: blur(28px) saturate(1.28);
+  box-shadow:
+    0 3px 0 rgba(255, 255, 255, 0.045),
+    0 18px 46px rgba(6, 14, 16, 0.38),
+    0 42px 88px rgba(6, 14, 16, 0.26),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.34),
+    inset -1px -1px 0 rgba(3, 10, 12, 0.48),
+    inset 0 -24px 42px rgba(5, 13, 15, 0.32) !important;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.magic-bento-card:hover {
+  border-color: rgba(157, 232, 215, 0.62) !important;
+  box-shadow:
+    0 4px 0 rgba(255, 255, 255, 0.055),
+    0 20px 54px rgba(6, 14, 16, 0.4),
+    0 0 34px rgba(157, 232, 215, 0.16),
+    0 0 72px rgba(157, 232, 215, 0.075),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.42),
+    inset -1px -1px 0 rgba(3, 10, 12, 0.52),
+    inset 0 -28px 48px rgba(5, 13, 15, 0.36) !important;
+}
+
+.magic-bento-card::before,
+.magic-bento-card.glass-tactile::before {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.055) 18%, transparent 42%),
+    linear-gradient(315deg, rgba(5, 13, 15, 0.34), transparent 34%),
+    radial-gradient(circle at 82% 10%, rgba(157, 232, 215, 0.18), transparent 34%),
+    radial-gradient(circle at 10% 112%, rgba(5, 13, 15, 0.34), transparent 42%);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 1px 0 0 rgba(255, 255, 255, 0.18),
+    inset -1px 0 0 rgba(3, 10, 12, 0.34),
+    inset 0 -1px 0 rgba(3, 10, 12, 0.46);
+  content: "";
+  display: block;
+  inset: 1px;
+  opacity: 0.92;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.magic-bento-card::after,
+.magic-bento-card.glass-tactile::after {
+  background:
+    linear-gradient(116deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.065) 18%, transparent 38%),
+    radial-gradient(ellipse at 50% -18%, rgba(255, 255, 255, 0.16), transparent 46%),
+    radial-gradient(ellipse at 82% 116%, rgba(5, 13, 15, 0.32), transparent 55%);
+  border-radius: inherit;
+  content: "";
+  display: block;
+  inset: 0;
+  opacity: 0.74;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.magic-bento-card > *:not(.magic-card-glow-overlay):not(.magic-card-particle):not(.magic-bento-ripple) {
+  position: relative;
+  z-index: 3;
+}
+
+.magic-card-glow-overlay {
+  background:
+    radial-gradient(
+      var(--magic-glow-radius) circle at var(--magic-glow-x) var(--magic-glow-y),
+      rgba(var(--magic-glow-color), calc(var(--magic-glow-intensity) * 0.8)) 0%,
+      rgba(var(--magic-glow-color), calc(var(--magic-glow-intensity) * 0.34)) 30%,
+      transparent 62%
+    );
+  border-radius: inherit;
+  inset: 0;
+  opacity: var(--magic-glow-intensity);
+  padding: 6px;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.28s ease;
+  z-index: 2;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.magic-bento-card .project-tags span,
+.magic-bento-card .tech-pills span,
+.magic-bento-card .btn-live,
+.magic-bento-card .btn-contact,
+.magic-bento-card .contact-link,
+.project-tags span,
+.tech-pills span,
+.btn-live,
+.btn-contact,
+.contact-link {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.22), transparent 42%),
+    linear-gradient(145deg, rgba(157, 232, 215, 0.13), rgba(255, 255, 255, 0.04) 42%, rgba(8, 15, 16, 0.68)),
+    rgba(9, 15, 16, 0.72);
+  border-color: rgba(157, 232, 215, 0.28);
+  box-shadow:
+    0 12px 28px rgba(6, 14, 16, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -12px 20px rgba(5, 13, 15, 0.26),
+    inset -1px -1px 0 rgba(3, 10, 12, 0.32);
+  position: relative;
+}
+
+.magic-bento-card .project-tags span::before,
+.magic-bento-card .tech-pills span::before,
+.magic-bento-card .btn-live::before,
+.magic-bento-card .btn-contact::before,
+.magic-bento-card .contact-link::before,
+.project-tags span::before,
+.tech-pills span::before,
+.btn-live::before,
+.btn-contact::before,
+.contact-link::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 48%);
+  border-radius: inherit;
+  content: "";
+  inset: 1px;
+  opacity: 0.48;
+  pointer-events: none;
+  position: absolute;
+}
+
+.magic-bento-card .project-tags span:hover,
+.magic-bento-card .tech-pills span:hover,
+.magic-bento-card .btn-live:hover,
+.magic-bento-card .btn-contact:hover,
+.magic-bento-card .contact-link:hover,
+.btn-live:hover,
+.btn-contact:hover,
+.contact-link:hover {
+  border-color: rgba(157, 232, 215, 0.58);
+  box-shadow:
+    0 16px 34px rgba(6, 14, 16, 0.34),
+    0 0 24px rgba(157, 232, 215, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    inset 0 -14px 24px rgba(5, 13, 15, 0.3);
+}
+
+.magic-card-particle {
+  background: rgba(var(--magic-particle-color), 0.95);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(var(--magic-particle-color), 0.55);
+  height: 4px;
+  pointer-events: none;
+  position: absolute;
+  width: 4px;
+  z-index: 4;
+}
+
+.magic-card-particle::before {
+  background: rgba(var(--magic-particle-color), 0.18);
+  border-radius: inherit;
+  content: "";
+  inset: -3px;
+  position: absolute;
+}
+
+.magic-bento-ripple {
+  background: radial-gradient(
+    circle,
+    rgba(var(--magic-ripple-color), 0.36) 0%,
+    rgba(var(--magic-ripple-color), 0.16) 30%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 5;
+}
+
+.magic-bento-global-spotlight {
+  background: radial-gradient(
+    circle,
+    rgba(157, 232, 215, 0.15) 0%,
+    rgba(157, 232, 215, 0.08) 15%,
+    rgba(157, 232, 215, 0.035) 30%,
+    transparent 70%
+  );
+  border-radius: 999px;
+  height: 780px;
+  left: 0;
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 780px;
+  will-change: left, top, opacity;
+  z-index: 90;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .magic-card-glow-overlay,
+  .magic-card-particle,
+  .magic-bento-ripple,
+  .magic-bento-global-spotlight {
+    display: none;
+  }
+}

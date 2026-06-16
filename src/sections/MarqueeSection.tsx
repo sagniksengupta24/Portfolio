@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 
 const img = import.meta.glob("../assets/*.webp", {
@@ -13,7 +13,7 @@ const imagesRow1 = imgArray.slice(0, 6);
 
 const imagesRow2 = imgArray.slice(7, 14);
 
-const Row = ({ images, x }: { images: string[], x: any }) => {
+const Row = ({ images, x }: { images: string[], x: MotionValue<number> }) => {
   // Triple the array for seamless scrolling
   const tripledImages = [...images, ...images, ...images];
 
@@ -39,10 +39,9 @@ const Row = ({ images, x }: { images: string[], x: any }) => {
 
 export const MarqueeSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [windowHeight, setWindowHeight] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(typeof window !== 'undefined' ? window.innerHeight : 0);
 
   useEffect(() => {
-    setWindowHeight(window.innerHeight);
     const handleResize = () => setWindowHeight(window.innerHeight);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);

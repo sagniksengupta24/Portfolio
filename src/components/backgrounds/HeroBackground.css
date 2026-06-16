@@ -1,0 +1,84 @@
+.hero-react-bits-background {
+  background: #050607;
+  inset: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-react-bits-layer {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hero-react-bits-base {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(157, 232, 215, 0.11), transparent 23rem),
+    radial-gradient(circle at 74% 44%, rgba(157, 232, 215, 0.08), transparent 30rem),
+    linear-gradient(180deg, #090c0d 0%, #050607 58%, #030405 100%);
+  z-index: 0;
+}
+
+.hero-react-bits-hyperspeed {
+  mix-blend-mode: screen;
+  opacity: 0.36;
+  z-index: 1;
+}
+
+.hero-react-bits-dots {
+  mix-blend-mode: normal;
+  opacity: 0.54;
+  z-index: 2;
+}
+
+.hero-react-bits-vignette {
+  background:
+    radial-gradient(circle at 55% 40%, transparent 0%, rgba(5, 6, 7, 0.2) 42%, rgba(5, 6, 7, 0.78) 100%),
+    linear-gradient(90deg, rgba(5, 6, 7, 0.54), transparent 42%, rgba(5, 6, 7, 0.34));
+  opacity: 0.32;
+  z-index: 4;
+}
+
+.hero-react-bits-fallback {
+  z-index: 1;
+}
+
+.hero-react-bits-glow {
+  border-radius: 999px;
+  filter: blur(120px);
+  height: 24rem;
+  position: absolute;
+  width: 24rem;
+}
+
+.hero-react-bits-glow-primary {
+  background: #9DE8D7;
+  left: 18%;
+  opacity: 0.16;
+  top: 22%;
+}
+
+.hero-react-bits-glow-secondary {
+  background: #DDE7EC;
+  bottom: 18%;
+  opacity: 0.08;
+  right: 16%;
+}
+
+@media (max-width: 768px) {
+  .hero-react-bits-hyperspeed {
+    opacity: 0.26;
+  }
+
+  .hero-react-bits-dots {
+    opacity: 0.44;
+  }
+
+  .hero-react-bits-vignette {
+    opacity: 0.42;
+  }
+}
